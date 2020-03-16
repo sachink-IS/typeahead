@@ -1,0 +1,14 @@
+.typeahead-basic{
+}
+
+.input-style{
+  width: 100%;
+  font-size: medium;
+}
+
+.state-search-label{
+  text-align: left;
+  color: gray;
+  font-size: medium;
+  margin-bottom: 10px;;
+}

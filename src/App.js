@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import Typeahead from "./components/Typeahead/Typeahead"
 import './App.css';
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Typeahead
+        width = "200px"
+        margin = "10px"
+        url = 'https://states.sachinkis.repl.co/'
+      />
     </div>
   );
 }
