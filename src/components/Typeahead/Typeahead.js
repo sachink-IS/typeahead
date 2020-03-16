@@ -73,8 +73,8 @@ export default function Typeahead(props) {
   }
 
   const divStyle = {
-    width: props.width,
-    margin: props.margin
+    width: props.width || '250px',
+    margin: props.margin || '10px'
   }
 
   return (

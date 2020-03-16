@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typeahead component gets rendered  1`] = `
+<div
+  className="typeahead-basic"
+  style={
+    Object {
+      "margin": "10px",
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="state-search-label"
+  >
+    Search for a state
+  </div>
+  <input
+    className="input-style"
+    name="CityName"
+    onChange={[Function]}
+    placeholder="Search city"
+    type="text"
+    value=""
+  />
+  <div
+    className="dropdownOutline"
+  />
+</div>
+`;

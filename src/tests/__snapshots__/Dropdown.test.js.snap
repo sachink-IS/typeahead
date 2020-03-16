@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typeahead component gets rendered  1`] = `
+<div
+  className="dropdownOutline"
+>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Alabama
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Alaska
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Massachusetts
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Michigan
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Vermont
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Virginia
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Washington
+  </div>
+  <div
+    className="cityDom"
+    onClick={[Function]}
+  >
+    Wyoming
+  </div>
+</div>
+`;
