@@ -2,9 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+First of all, you need ro run following command after unzipping the project.
+
 ### `npm install`
 
-After unzipping the project, first thing to do is installing project dependencies using command.
+This will install all project dependencies.
 
 ### `npm start`
 

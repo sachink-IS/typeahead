@@ -5,49 +5,49 @@ exports[`Typeahead component gets rendered  1`] = `
   className="dropdownOutline"
 >
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Alabama
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Alaska
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Massachusetts
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Michigan
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Vermont
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Virginia
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Washington
   </div>
   <div
-    className="cityDom"
+    className="stateDom"
     onClick={[Function]}
   >
     Wyoming

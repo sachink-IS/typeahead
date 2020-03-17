@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import DropDown from "../DropDown/DropDown";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./Typeahead.css";
 
 /**
@@ -25,50 +26,54 @@ function usePrevious(state) {
 }
 
 export default function Typeahead(props) {
-  const [aCities, setACities] = useState([]);
-  const [sCityName, setSCityName] = useState("");
+  const [aStates, setAStates] = useState([]);
+  const [sStateName, setSStateName] = useState("");
   const [hideDropDown, setHideDropDown] = useState(true);
-  const prevSearchText = usePrevious(sCityName);
+  const [sSelectedState, setSSelectedState] = useState("")
+  const prevSearchText = usePrevious(sStateName);
 
   useEffect(() => {
-    if (prevSearchText && prevSearchText.length < sCityName.length) {
-      filterStatesLocally(sCityName);
+    if (prevSearchText && prevSearchText.lenth < sStateName.length) {
+      setSSelectedState("");
+      filterStatesLocally(sStateName);
     } else {
-      getCities();
+      getStates();
     }
-  }, [sCityName])
+  }, [sStateName])
 
   const filterStatesLocally = (value) => {
-    let filteredStates = aCities.filter(function (el) {
+    // empty the selected state on backspace
+    let filteredStates = aStates.filter(function (el) {
       let index = el.name.toLowerCase().indexOf(value.toLowerCase());
       return index > -1;
     })
-    setACities(filteredStates)
+    setAStates(filteredStates)
   }
 
-  const updateCityName = (e) => {
-    let sValue = e.target.value;
-    setSCityName(sValue);
+  const updateStateName = (e) => {
+    let sValue = e.target.value.trim();
+    setSStateName(sValue);
     (sValue) ? setHideDropDown(false) : setHideDropDown(true);
   }
 
   const getUrl = () => {
     let baseUrl = props.url;
-    let params = (sCityName) ? '?value=' + sCityName : '';
+    let params = (sStateName) ? '?value=' + sStateName : '';
     return baseUrl + params;
   }
 
-  const getCities = async () => {
+  const getStates = async () => {
     await axios({
       method: "get",
       url: getUrl()
     }).then((response) => {
-      setACities(response.data);
+      setAStates(response.data);
     })
   }
 
-  const selectCity = (city) => {
-    setSCityName(city.name);
+  const selectState = (state) => {
+    setSSelectedState(state.name);
+    setSStateName(state.name);
     setHideDropDown(true);
   }
 
@@ -77,22 +82,36 @@ export default function Typeahead(props) {
     margin: props.margin || '10px'
   }
 
+  const showIcon = (!sStateName && hideDropDown) ? 
+  <i className="caret fas fa-angle-down" onClick={() => setHideDropDown(false)}></i> :
+  <i className="caret fas fa-times" onClick={() => {
+    setHideDropDown(true);
+    setSSelectedState("");
+    setSStateName("");
+  }}></i>
+
   return (
     <div style={divStyle} className="typeahead-basic">
       <div className="state-search-label">Search for a state</div>
-      <input name="CityName"
-        type="text"
-        placeholder="Search city"
-        className="input-style"
-        value={sCityName}
-        onChange={updateCityName}
-      />
+      <div className="inputParent">
+        <input name="StateName"
+          type="text"
+          placeholder="Search State"
+          className="input-style"
+          value={sStateName}
+          onChange={updateStateName}
+        />
+        {showIcon}
+      </div>
       <DropDown
-        cities={aCities}
-        searchText={sCityName}
-        selectCity={selectCity}
+        states={aStates}
+        searchText={sStateName}
+        selectState={selectState}
         hideDropDown={hideDropDown}
       />
+      <div className="SelectedState">
+        Selected State : {sSelectedState}
+      </div>
     </div>
   )
 }

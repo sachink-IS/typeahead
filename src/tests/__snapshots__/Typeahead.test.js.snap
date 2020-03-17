@@ -15,16 +15,30 @@ exports[`Typeahead component gets rendered  1`] = `
   >
     Search for a state
   </div>
-  <input
-    className="input-style"
-    name="CityName"
-    onChange={[Function]}
-    placeholder="Search city"
-    type="text"
-    value=""
-  />
+  <div
+    className="inputParent"
+  >
+    <input
+      className="input-style"
+      name="StateName"
+      onChange={[Function]}
+      placeholder="Search State"
+      type="text"
+      value=""
+    />
+    <i
+      className="caret fas fa-angle-down"
+      onClick={[Function]}
+    />
+  </div>
   <div
     className="dropdownOutline"
   />
+  <div
+    className="SelectedState"
+  >
+    Selected State : 
+    
+  </div>
 </div>
 `;

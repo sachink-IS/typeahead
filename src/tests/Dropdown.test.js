@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from '../components/DropDown/DropDown';
 import renderer from 'react-test-renderer';
-import cities from '../components/mock-data/cities';
+import states from '../components/mock-data/states';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -10,9 +10,9 @@ Enzyme.configure({ adapter: new Adapter() });
 it('Typeahead component gets rendered ', () => {
   const component = renderer.create(
     <Dropdown
-      cities={cities}
+      states={states}
       searchText=""
-      selectCity={jest.fn()}
+      selectState={jest.fn()}
       hideDropDown={false}
     />
   );
@@ -23,39 +23,39 @@ it('Typeahead component gets rendered ', () => {
 describe("<Dropdown hideDropDown={true} />", function () {
   const wrapper = shallow(
     <Dropdown
-      cities={cities}
+      states={states}
       searchText=""
-      selectCity={jest.fn()}
+      selectState={jest.fn()}
       hideDropDown={true}
     />
   );
 
   it("should not render dropdown as it is hided (from props)", function () {
-    let obj = wrapper.find(".cityDom");
+    let obj = wrapper.find(".stateDom");
     expect(obj).toHaveLength(0);
   });
 });
 
 describe("<Dropdown hideDropDown={false}  />", function () {
-  const selectCityCallback = jest.fn();
+  const selectStateCallback = jest.fn();
   const wrapper = shallow(
     <Dropdown
-      cities={cities}
+      states={states}
       searchText=""
-      selectCity={selectCityCallback}
+      selectState={selectStateCallback}
       hideDropDown={false}
     />
   );
 
   it("should render 8 dropdown items", function () {
-    let obj = wrapper.find(".cityDom");
+    let obj = wrapper.find(".stateDom");
     expect(obj).toHaveLength(8);
   });
 
-  it("should call the selectCity() on click", function(){
-    let obj = wrapper.find(".cityDom");
+  it("should call the selectState() on click", function(){
+    let obj = wrapper.find(".stateDom");
     obj.at(0).simulate('click');
-    expect(selectCityCallback).toHaveBeenCalled();
+    expect(selectStateCallback).toHaveBeenCalled();
   });
 });
 
@@ -64,18 +64,18 @@ describe("<Dropdown hideDropDown={false}  />", function () {
  * test case required in case of second approach 
  
 describe("<Dropdown hideDropDown={false} searchText='Ala'  />", function () {
-  const selectCityCallback = jest.fn();
+  const selectStateCallback = jest.fn();
   const wrapper = shallow(
     <Dropdown
-      cities={cities}
+      states={states}
       searchText="Ala"
-      selectCity={selectCityCallback}
+      selectState={selectStateCallback}
       hideDropDown={false}
     />
   );
   
   it("should render only 2 dropdown items", function () {
-    let obj = wrapper.find(".cityDom");
+    let obj = wrapper.find(".stateDom");
     expect(obj).toHaveLength(2);
   });
 

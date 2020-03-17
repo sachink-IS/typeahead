@@ -1,11 +1,35 @@
-.input-style{
-  width: 100%;
-  font-size: medium;
-}
-
-.state-search-label{
+.typeahead-basic{
+  display: inline-block;
   text-align: left;
   color: gray;
   font-size: medium;
-  margin-bottom: 10px;;
+}
+
+.input-style{
+  width: 100%;
+  color: gray;
+  font-size: medium;
+  position: relative;
+}
+
+.state-search-label{
+  margin-bottom: 10px;
+}
+
+.caret{
+  position: relative;
+  right: 18px;
+  top: 4px;
+  cursor: pointer;
+}
+
+.SelectedState{
+  display: inline-block;
+  position: fixed;
+  top: 370px;
+  color: gray;
+  font-size: medium;
+}
+.inputParent {
+  display:flex;
 }

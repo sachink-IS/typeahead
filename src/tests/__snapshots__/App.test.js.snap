@@ -17,16 +17,29 @@ Object {
           >
             Search for a state
           </div>
-          <input
-            class="input-style"
-            name="CityName"
-            placeholder="Search city"
-            type="text"
-            value=""
-          />
+          <div
+            class="inputParent"
+          >
+            <input
+              class="input-style"
+              name="StateName"
+              placeholder="Search State"
+              type="text"
+              value=""
+            />
+            <i
+              class="caret fas fa-angle-down"
+            />
+          </div>
           <div
             class="dropdownOutline"
           />
+          <div
+            class="SelectedState"
+          >
+            Selected State : 
+            
+          </div>
         </div>
       </div>
     </div>
@@ -44,16 +57,29 @@ Object {
         >
           Search for a state
         </div>
-        <input
-          class="input-style"
-          name="CityName"
-          placeholder="Search city"
-          type="text"
-          value=""
-        />
+        <div
+          class="inputParent"
+        >
+          <input
+            class="input-style"
+            name="StateName"
+            placeholder="Search State"
+            type="text"
+            value=""
+          />
+          <i
+            class="caret fas fa-angle-down"
+          />
+        </div>
         <div
           class="dropdownOutline"
         />
+        <div
+          class="SelectedState"
+        >
+          Selected State : 
+          
+        </div>
       </div>
     </div>
   </div>,

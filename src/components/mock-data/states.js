@@ -1,4 +1,4 @@
-let cities = [
+let states = [
   { name: "Alabama" }, 
   { name: "Alaska" }, 
   { name: "Massachusetts" }, 
@@ -9,4 +9,4 @@ let cities = [
   { name: "Wyoming" }
 ]
 
-export default cities;
+export default states;

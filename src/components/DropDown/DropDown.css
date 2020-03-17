@@ -1,21 +1,21 @@
 .dropdownOutline{
   box-shadow: 2px 4px 10px gray;
-  width: 102%;
+  width: 94%;
   font-size: medium;
   max-height: 300px;
   overflow-y: auto;
+  color: gray;
 }
 
-.cityDom{
+.stateDom{
   text-align: left;
-  font-size: medium;
   padding: 4px 0px;
   padding-left: 4px;
   cursor: pointer;
   text-transform: uppercase;
 }
 
-.cityDom:hover{
+.stateDom:hover{
   background-color: #007BFF;
   color: #FFF;
 }

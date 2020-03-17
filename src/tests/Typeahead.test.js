@@ -30,7 +30,7 @@ describe("<Typeahead url = 'https://states.sachinkis.repl.co/'/>", function(){
   });
 
   it("should not render any dropdown items", function(){
-    let dropdown = wrapper.find('.cityDom');
+    let dropdown = wrapper.find('.stateDom');
     expect(dropdown).toHaveLength(0);
   });
 })
