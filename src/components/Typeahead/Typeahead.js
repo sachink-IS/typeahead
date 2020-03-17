@@ -34,7 +34,6 @@ export default function Typeahead(props) {
 
   useEffect(() => {
     if (prevSearchText && prevSearchText.lenth < sStateName.length) {
-      setSSelectedState("");
       filterStatesLocally(sStateName);
     } else {
       getStates();
@@ -52,6 +51,7 @@ export default function Typeahead(props) {
 
   const updateStateName = (e) => {
     let sValue = e.target.value.trim();
+    setSSelectedState("");
     setSStateName(sValue);
     (sValue) ? setHideDropDown(false) : setHideDropDown(true);
   }
