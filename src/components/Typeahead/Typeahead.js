@@ -50,7 +50,11 @@ export default function Typeahead(props) {
   }
 
   const updateStateName = (e) => {
-    let sValue = e.target.value.trim();
+    let enteredText = e.target.value.trim();
+    let charOnlyRegex = /^[A-Za-z]+$/;
+    // will not allow any other key to enter other than alphabets and space
+    let validateEnteredKey = enteredText.match(charOnlyRegex) || enteredText === "";
+    let sValue = (validateEnteredKey) ? enteredText : sStateName;
     setSSelectedState("");
     setSStateName(sValue);
     (sValue) ? setHideDropDown(false) : setHideDropDown(true);
@@ -63,12 +67,18 @@ export default function Typeahead(props) {
   }
 
   const getStates = async () => {
-    await axios({
-      method: "get",
-      url: getUrl()
-    }).then((response) => {
-      setAStates(response.data);
-    })
+    if(localStorage.getItem('states')){
+      console.log("getting data from localstorage : ", JSON.parse(localStorage.getItem('states')));
+      setAStates(JSON.parse(localStorage.getItem('states')));   
+    }else{
+      await axios({
+        method: "get",
+        url: getUrl()
+      }).then((response) => {
+        setAStates(response.data);
+        localStorage.setItem("states", JSON.stringify(response.data));
+      })  
+    }
   }
 
   const selectState = (state) => {

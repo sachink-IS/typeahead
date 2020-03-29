@@ -12,11 +12,11 @@ export default class DropDown extends Component {
          * Approach 2 : uncommenting the following lines of code, 
          *              using local sorting of data based on the search string
          */
-        // let index = state.name.toLowerCase().indexOf(props.searchText.toLowerCase());
-        // if (index > -1) {
+        let strIndex = state.name.toLowerCase().indexOf(props.searchText.toLowerCase());
+        if (strIndex > -1) {
           let dom = <div className="stateDom" key={index} onClick={this.props.selectState.bind(this, state)}>{state.name}</div>
           dStatesDom.push(dom)
-        // }
+        }
       })          
     }
 
